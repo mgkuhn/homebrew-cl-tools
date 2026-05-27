@@ -5,8 +5,6 @@ class Ucampas < Formula
   version "20260316"
   sha256 "dd7852b569966ab7f883868d8b1aecd45cf4fb718820dfea98fcca5f831d389e" # paste output of `make distribution`
 
-  depends_on "perl"
-
   # The ucampas script locates its bundled Perl modules and templates
   # via FindBin by substituting /bin -> /share/ucampas in $RealBin, so
   # the bin/ and share/ucampas/ layout below is required.
