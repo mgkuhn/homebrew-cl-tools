@@ -5,12 +5,12 @@ class ClFilerTools < Formula
   homepage "https://www.cst.cam.ac.uk/local/sys/web/tools"
 
   url     "file://#{File.expand_path(__FILE__)}"
-  sha256  Digest::SHA256.file(File.expand_path(__FILE__)).hexdigest
   version IO.popen(
-            ["git", "-C", File.dirname(__FILE__), "log", "-1",
-             "--format=%cd", "--date=format:%Y%m%d",
-             "--", File.basename(__FILE__)], &:read
-          ).strip
+    ["git", "-C", __dir__, "log", "-1",
+     "--format=%cd", "--date=format:%Y%m%d",
+     "--", File.basename(__FILE__)], &:read
+  ).strip
+  sha256  Digest::SHA256.file(File.expand_path(__FILE__)).hexdigest
 
   TOOLS = %w[
     cl-web-view
